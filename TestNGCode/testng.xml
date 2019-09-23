@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test name="Test">
+  <parameter name="firstName" value="Raji"></parameter>
+      <parameter name="lastName" value="NR"></parameter>
+      <parameter name="address" value="Ladies Hostel"></parameter>
+      <parameter name="email" value="Rajib@gmail.com"></parameter>
+      <parameter name="phno" value="8760156060"></parameter>
+   <parameter name="pwrd" value="RajiB@123"></parameter>
+   <parameter name="Cpwrd" value="RajiB@123"></parameter>
+    <classes>
+      <class name="org.test.TestngCode"/> 
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

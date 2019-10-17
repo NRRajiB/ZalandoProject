@@ -21,27 +21,25 @@ public class TaskCbmrOne {
 	    driver.findElement(By.xpath("(//a[text()=\"Add Customer\"])[1]")).click();
 	}
 
-	@When("the user navigates to home page and fill the text boxes and submit {string}, {string}, {string}, {string}, {string}")
-	public void the_user_navigates_to_home_page_and_fill_the_text_boxes_and_submit(String s1, String s2, String s3, String s4, String s5) {
-	driver.findElement(By.xpath("//label[text()='Done']")).click();
-	driver.findElement(By.id("fname")).sendKeys(s1);
-	driver.findElement(By.id("lname")).sendKeys(s2);
-	driver.findElement(By.id("email")).sendKeys(s3);
-	driver.findElement(By.name("addr")).sendKeys(s4);
-	driver.findElement(By.id("telephoneno")).sendKeys(s5);
-	driver.findElement(By.name("submit")).click();
+	@When("the user navigates to home page and fill the text boxes and submit")
+	public void the_user_navigates_to_home_page_and_fill_the_text_boxes_and_submit(io.cucumber.datatable.DataTable dataTable) {
+		List<String> A = dataTable.asList(String.class);
+		driver.findElement(By.xpath("//label[text()='Done']")).click();
+		driver.findElement(By.id("fname")).sendKeys(A.get(0));
+		driver.findElement(By.id("lname")).sendKeys(A.get(1));
+		driver.findElement(By.id("email")).sendKeys(A.get(2));
+		driver.findElement(By.name("addr")).sendKeys(A.get(3));
+		driver.findElement(By.id("telephoneno")).sendKeys(A.get(4));
+		driver.findElement(By.name("submit")).click();
 	}
 
 	@Then("the user get the customer ID")
 	public void the_user_get_the_customer_ID() {
-	    List<WebElement> td = driver.findElements(By.tagName("td"));
-for (WebElement data : td) {
-	System.out.println(data.getText());		
-		}
+		List<WebElement> td = driver.findElements(By.tagName("td"));
+		for (WebElement data : td) {
+			System.out.println(data.getText());		
+				}
 	}
-	@When("the user navigates to home page and fill the text boxes and submit")
-	public void the_user_navigates_to_home_page_and_fill_the_text_boxes_and_submit() {
-	    System.out.println("Success");	}
 
 
 }

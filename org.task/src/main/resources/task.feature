@@ -24,16 +24,7 @@ Feature: Title of your feature
   Scenario: Generate customer ID
     Given launch the browser and open the url and click add customer
     When the user navigates to home page and fill the text boxes and submit 
+                     | Bharani   |  C       | bharani@gmail.com | AnnaNagar    |9095476781|
     Then the user get the customer ID
     
-  @tag2
-  Scenario Outline: Generate customer ID
-     Given launch the browser and open the url and click add customer 
-    When the user navigates to home page and fill the text boxes and submit "<firstname>", "<Lastname>", "<email>", "<address>", "<mobnumber>"
-    Then the user get the customer ID
-
-    Examples: 
-      | firstname | Lastname | email             |  address      | mobnumber|
-      | Raji      | NR       | Rajib@gmail.com   | ladiesHostel |8760156060|
-      | Bharani   |  C       | bharani@gmail.com | AnnaNagar    |9095476781|
-      | Sasi      |  G       | sasi@gmail.com    | murugankovilStreet|9865632594|
+  
